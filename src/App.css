@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+*{
+	padding:0;
+	margin:0;
+	color:white;
+	word-wrap: break-word;
+	text-decoration: none;
+	user-select: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+::-webkit-scrollbar {
+	display: none;
   }
+
+button,li{
+	cursor:pointer;
+}
+.App{
+	background-color: black;
+	width:100%;
+	display: flex;
+	justify-content: center;
+}
+Link{
+	
+}
+.body{
+	 
+	display:flex;
+	gap:15px;
+	flex-direction:column;
+	min-height:100vh;
+	width:100%;
+	background-color:black;
+	align-items:center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav{
+	background-image:linear-gradient(to bottom,rgb(0,0,0,0.6),rgb(0,0,0,0.5));
+	width:100%;
+	gap:200px;
+	color:white;
+	position:fixed;
+	display:flex;
+	top:0;
+	transition:0.5s;
+	z-index:999;
+	text-shadow: 1px 4px rgb(0,0,0,0.4);
+
+}
+.avatar{
+	height:50px;
+	width:50px;
+	border-radius:50%;
+	background-color:red;
+	overflow:hidden;
+	
+}
+.cart{
+	position:relative;
+}
+.cart div{
+	position:absolute;
+	text-align:center;
+	height:20px;
+	width:20px;
+	border-radius:50%;
+	background-color:red;
+	overflow:hidden;
+	right:-5px;
+	bottom:15px;
+	font-size:16px;
+}
+.avatar img{
+	height:100%;
+	width:100%;
+	object-fit:cover;
+}
+ul{
+	height:100%;
+	display:flex;
+	}
+li{
+	display:flex;
+	font-size:20px;
+	list-style:none;
+	align-items:center;
+	justify-content:center;
+	padding:10px;
+	transition:0.5s;
+}
+.Link{
+	height: 100%;
+	width: 100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+LI:HOVER{
+	background-color:rgb(123,241,231,0.4);
+	transform:scale(1.1);
+}
+.title{
+	display:flex;
+	color:white;
+	height:60px;
+	width:150px;
+	align-items:center;
+	justify-content:center;
+	font-size:20px;
+	border:2px solid white;
+	border-radius:15px;
+}
+.slide-movie{
+	position:relative;
+	overflow:hidden;
+	height:500px;
+	width:100%;
+	background-color:black;
+	border-radius:0px 0px 50px 50px;
+}
+.slide-movie img{
+	height:100%;
+	width:100%;
+	position:absolute;
+	object-fit:cover;
+	z-index:1;
+}
+.detail{
+	background-image:linear-gradient(to right,rgb(0,0,0,0.7),rgb(0,0,0,0),rgb(0,0,0,0));
+	width:100%;
+	height:100%;
+	bottom:0;
+	position:relative;
+	z-index:2;
+}
+.detail-movie{
+	font-size:25px;
+	left:100px;
+	color:white;
+	line-height:45px;
+	width:100%;
+	height:50%;
+	bottom:0;
+	position:absolute;
+	z-index:2;
+	word-wrap: break-word;
+}
+.detail button{
+	padding:20px;
+	font-size:25px;
+	color:white;
+	background-color:transparent;
+	border:3px solid lightgreen;
+	border-radius:15px;
+	transition:0.5s;
+}
+.detail button:hover{
+	background-color:rgb(124,215,213,0.5);
+	transform:scale(1.2);
+}
+.trending{
+	display:flex;
+	flex-direction:column;
+	font-size:25px;
+	line-height:50px;
+	width:60%;
+	overflow:auto;
+	position:relative;
+}
+.container{
+	width:90%;
+	display:flex;
+	gap:50px;
+	flex-wrap:wrap;
+}
+.comingSoon{
+	position:relative;
+	font-size:20px;
+	line-height:30px;
+	width:30%;
+	height:400px;
+	
+}
+.scrollTrend{
+	opacity:0;
+}
+.trending:hover .scrollTrend{
+	opacity:1;
+}
+.comingSoon:hover .scrollTrend{
+	opacity:1;
+}
+.newMovie:hover .scrollTrend{
+	opacity:1;
 }
 
-.App-link {
-  color: #61dafb;
+.comingSoon .list-item{
+	gap:20px;
+	display:flex;
+	flex-direction:column;
+	line-height:30px;
+	width:100%;
+	height:400px;
+		overflow:hidden;
+		scroll-behavior: smooth;
 }
+.items{
+	gap:10%;
+	height:150px;
+	display:flex;
+	cursor:pointer;
+	transition:0.2s;
+}
+.items:hover{
+	border:2px solid lightgreen;
+	
+}
+p{
+	word-wrap: break-word;
+}
+.items .detail{
+	width:50%;
+	
+}
+.img-coming{
+	width:30%;
+	height:100%;
+	background-color:yellow;
+	overflow:hidden;
+}
+.img-coming img{
+	height:100%;
+	width:100%;
+	object-fit:cover;
+}
+.list-trend{
+	font-size:25px;
+	overflow:hidden;
+	white-space: nowrap;
+scroll-behavior: smooth;
+	 
+}
+.item-trend{
+	display:inline-block;
+	height:360px;
+	width:250px;
+	position:relative;
+	overflow:hidden;
+	border-radius:15px;
+	margin-left:10px;
+}
+.item-trend img{
+	height:auto;
+	width:100%;
+	position:absolute;
+	z-index:1;
+	object-fit:cover;
+}
+.detail-trend button{
+	padding:14px;
+	font-size:22px;
+	color:white;
+	background-color:transparent;
+	border:3px solid lightgreen;
+	border-radius:15px;
+	transition:0.5s;
+	
+}
+.detail-trend button:hover{
+	background-color:rgb(124,215,213,0.5);
+	transform:scale(1.2);
+}
+.item-trend:hover .detail-trend{
+	opacity:1;
+}
+.detail-trend{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	background-color:rgb(0,0,0,0.5);
+	font-size:17px;
+	color:white;
+	line-height:45px;
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:2;
+	opacity:0;
+	transition:0.5s;
+}
+.scrollTrend{
+	color:black;
+	font-size:30px;
+	font-weight: bold;
+	height:50px;
+	width:50px;
+	border-radius:50%;
+	background-color:rgb(225,225,225,0.7);
+	position:absolute;
+	top:50%;
+	right:0;
+	z-index:5;
+text-align:center;
+	cursor:pointer;
+	transition:0.5s;
+	border:5px solid black;
+}
+.scrollTrend:hover{
+	background-color:lightgreen;
+}
+.scrollLeft{
+	left:0;
+}
+.scrolltop{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	top:100px;
+}
+.scrollbottom div{
+	height:100%;
+	width:100%;
+	margin-left:-5px;
+	transform:rotate(90deg);
+	text-align:center;
+	
+}
+.scrolltop div{
+	height:100%;
+	width:100%;
+	margin-left:5px;
+	transform:rotate(-90deg);
+	text-align:center;
+	
+}
+.newMovie{
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	font-size:25px;
+	line-height:50px;
+	width:90%;
+	overflow:auto;
 }

@@ -1,0 +1,164 @@
+.social{
+    margin-top: 65px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    gap:10px;
+    position: relative;
+}
+.create{
+    transition: 0.5s;
+    overflow: hidden;
+    position: fixed;
+    z-index: 90;
+    max-height: 800px;
+    height: 90px;
+    width: 90px;
+    bottom: 10px;
+    right: 10px;
+    border:2px solid blueviolet;
+   text-align: center;
+    font-size: 55px;
+    background-color: rgb(112, 111, 111);
+    border-radius: 90%;
+    cursor: pointer;
+}
+.create textarea{
+    width:90%;
+    height: 20px;
+    max-height: 400px;
+    padding: 10px;
+    color: black;
+    font-size: 25px;
+    resize: none;
+    border: none;
+    outline: none;
+}
+.create button{
+    width: 90%;
+    height: 90px;
+    background-color: transparent;
+    font-size: 30px;
+    border: 2px solid lightcyan;
+}
+.create-container{
+    height: 200px;
+    width: 400px;
+    bottom: 10px;
+    right: 10px;
+
+}
+.thongbao-i{
+display: flex;
+gap:20px;
+}
+.thongbao-dt{
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+}
+.s-i{
+    height: 300px;
+    width: 200px;
+    background-color: white;
+}
+.social h2{
+    color: pink;
+}
+.s-background{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0px 0px 50px 50px;
+}
+.s-thongbao-c{
+    width: 96%;
+    padding: 2%;
+    height: 300px;
+    background-color: rgb(94, 94, 94);
+    border-radius: 15px;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.input textarea{
+    width:600px;
+    border-radius: 15px 0px 0px 15px;
+    padding: 10px;
+    color: black;
+    font-size: 25px;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.input button{
+    height: 69px;
+    width: 100px;
+   
+    border-radius: 0px 15px 15px 0px;
+    font-size: 20px;
+    border: none;
+    background-color: black;
+}
+.comment{
+}
+.input{
+    display: flex;
+}
+.comment-i{
+    font-size: 20px;
+    width: 50%;
+    height: 20px;
+}
+.c-i{
+    display: flex;
+    gap:20px;
+    background-color: rgb(0, 0, 0,0.2);
+    border-radius: 20px;
+    padding: 2px;
+}
+.s-thongbao{
+    width: 66%;
+    
+    background-color: rgb(0, 0, 0);
+}
+.s-user{
+    display: flex;
+    gap: 10px;
+}
+.s-av{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.s-user .name {
+    font-size: 20px;
+    height: 70px;
+}
+p{
+   font-size: 20px;
+   white-space:pre-wrap;
+}
+
+.img-c{
+    width: 60%;
+    height: auto;
+}
+.s-user .name div{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.s-content{
+    word-wrap: break-word;
+    line-height: 50px;
+    width: 60%;
+   padding: 50px;
+    background-color: rgb(119, 119, 119);
+}

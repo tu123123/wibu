@@ -1,0 +1,153 @@
+{
+  "user": [
+    {
+      "cart": [
+        {
+          "time": "12h",
+          "ghe": "8,9a",
+          "combo": "",
+          "total": 90,
+          "data": ""
+        }
+      ],
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "admin",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSz8wBuJJTefVDZLyw0jNEXrEFRhHRFqnRixNzycZNDXimZyzTdrRzU9F49J8X61-yg5k&usqp=CAU",
+      "cart": 2
+    }
+  ],
+  "movie": [
+    {
+      "xuatchieu": "12h,12h30,1h",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "bg": "https://c4.wallpaperflare.com/wallpaper/561/827/585/anime-cross-road-wallpaper-preview.jpg",
+      "name": "Cross Road",
+      "tacgia": "Shinkai Makoto",
+      "img": "https://i.pinimg.com/originals/fc/c2/15/fcc215e7f62218e77f2758380b199d40.jpg",
+      "detail": "Câu chuyện kể về 2 học sinh trung học Miho và Shota đang trong quá trình cày cuốc điên cuồng để chuẩn bị cho kì thi đầu vào đại học.",
+      "time": "12/2/2142",
+      "tinhtrang": "Chưa chiếu",
+      "theloai": "tình cảm, lãng mạng",
+      "trailer": "https://www.youtube.com/embed/H8Xd5BiHAa0"
+    },
+    {
+      "bg": "https://image.thanhnien.vn/w1024/Uploaded/2022/abfluao/2019_07_08/spider-man-far-from-home-og-size-image_cmti.jpg",
+      "name": "Spider Man",
+      "img": "https://media.vov.vn/uploaded/9eqrbt2uv7o/2019_06_23/poster_szfr.jpg",
+      "detail": "Người Nhện xa nhà là phim siêu anh hùng năm 2019 của Mỹ dựa trên nhân vật Peter Parker của Marvel Comics, do Columbia Pictures và Marvel Studios đồng sản xuất và Sony Pictures Releasing phân phối. Phim là phần tiếp theo của Người Nhện: Trở về nhà, đồng thời là phim điện ảnh thứ hai mươi ba của Vũ trụ Điện ảnh Marvel.",
+      "time": "12/2/2242",
+      "tacgia": "Jon Watts",
+      "tinhtrang": "Đang Công chiếu",
+      "theloai": "tình cảm, lãng mạng",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "xuatchieu": "12h,12h30,1h",
+      "trailer": "https://www.youtube.com/embed/OB3g37GTALc"
+    },
+    {
+      "name": "Your Name",
+      "tacgia": "Shinkai Makoto",
+      "bg": "https://i.pinimg.com/originals/81/31/20/8131208cdb98026d71d3f89b8097c522.jpg",
+      "img": "https://i.pinimg.com/originals/30/a4/65/30a465d7c817d81dcfeeb7c834d9dc1f.jpg",
+      "detail": "Your Name – Tên cậu là gì? là một bộ phim điện ảnh hoạt hình Nhật Bản thuộc thể loại tình cảm lãng mạn, kỳ ảo, chính kịch do Shinkai Makoto làm đạo diễn. Phim do hãng CoMix Wave Films sản xuất và Toho phát hành",
+      "time": "12/2/2242",
+      "tinhtrang": "Đang Công chiếu",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "xuatchieu": "12h,12h30,1h",
+      "theloai": "tình cảm, lãng mạng",
+      "trailer": "https://www.youtube.com/embed/_mifHzxFNQ4"
+    },
+    {
+      "name": "TenKi No Ko",
+      "bg": "http://images6.fanpop.com/image/photos/43200000/Weathering-With-You-Wallpapers-makoto-shinkai-43284754-1920-1200.jpg",
+      "img": "http://i.truyentranh8.net/2020/06-25/9ae1390e6f7702b7200373db00dda33b.jpg",
+      "detail": "Morishima Hodaka - một cậu học sinh năm nhất, chán ngấy với cuộc sống ở một hòn đảo hẻo lánh quyết bỏ nhà lên Tokyo. Trên đường băng qua đại dương bằng chiếc phà, bão lớn đánh vào phà, cậu được cứu bởi một người đàn ông trung niên tên Suga Keisuke. Keisuke đưa danh thiếp của mình cho cậu để tiện liên lạc. Tại Tokyo, Hodaka còn quá trẻ để xin việc hợp pháp, cậu không được nhận lần này đến lần khác, phải ở tạm một con hẻm với số tiền ít ỏi trong túi. Amano Hina - một cô gái chạc tuổi Hodaka, làm việc trong nhà ăn đã bắt gặp cậu và đưa cậu một chiếc bánh Hamburger vì cậu đã ăn ở đó trong ba đêm liên tiếp. Thời gian sau, Hodaka được Keisuke thuê làm một công việc ổn định cho tòa soạn của ông là soạn thảo những bài viết về các hiện tượng siêu nhiên. Cùng với người cháu của Keisuke là Natsumi tại tòa soạn, hai người họ khám phá truyền thuyết liên quan đến sự thay đổi thời tiết đột ngột ở Tokyo. Từ đó họ biết về truyền thuyết về 'cô gái nắng' và 'cô gái mưa', người con gái có khả năng điều khiển thời tiết.",
+      "time": "12/2/2242",
+      "tacgia": "Shinkai Makoto",
+      "tinhtrang": "Đang Công chiếu",
+      "xuatchieu": "12h,12h30,1h",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "theloai": "tình cảm, lãng mạng",
+      "trailer": "https://www.youtube.com/embed/Q6iK6DjV_iE"
+    },
+    {
+      "name": "Tamako love story",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "tacgia": "Mutsuki Ichinose",
+      "img": "https://i.pinimg.com/736x/7b/38/d1/7b38d1c0be306607939d132170eb65b2.jpg",
+      "detail": "Câu chuyện xoay quanh Tamako, lúc này là nữ sinh cao trung cuối cấp. Cô nàng dự định tiếp tục theo nghề truyền thống của gia đình – làm bánh mochi sau khi tốt nghiệp cao trung, và sau này sẽ tiếp quản tiệm bánh từ cha. Đối diện nhà Tamako là nhà cậu bạn Mochizou, cũng có truyền thống làm mochi lâu đời.",
+      "bg": "https://ecdn.game4v.com/g4v-content/uploads/2020/02/tamako-love-story-8.png",
+      "time": "12/2/2242",
+      "tinhtrang": "Chưa chiếu",
+      "xuatchieu": "12h,12h30,1h",
+      "theloai": "tình cảm, lãng mạng",
+      "trailer": "https://www.youtube.com/embed/B8JlGOXjZ28"
+    },
+    {
+      "name": "Josee, The Tiger and The Fish",
+      "tacgia": " Seiko Tanabe",
+      "bg": "https://kodoani.com/uploads/images/2021/07/image_750x_60f0003188e87.jpg",
+      "img": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2020/11/josee_the_tiger_and-the-fish-1.jpg?resize=696%2C986&ssl=1",
+      "detail": "Josee, Tiger and the Fish là một câu chuyện tình yêu giữa cô gái khuyết tật 24 tuổi - Josee gần như sống cả đời trên chiếc xe lăn và một cậu sinh viên 22 tuổi sắp ra trường với nhiều hoài bão. Một ngày, Tsuneo - người luôn bận rộn giữa việc học, giành học bổng cho chuyên ngành sinh vật biển và chật vật với công việc làm thêm kiếm thêm thu nhập, sau khi đi làm về bỗng gặp phải tình huống trớ trêu. Ở đâu trên con dốc cao một cô gái ngồi xe lăn đang lao xuống với tốc độ bàn thờ, may mắn thay cậu đã đỡ kịp và cứu lấy cô. Tưởng rằng đây là một va chạm đáng yêu tình cờ như bao chuyện tình khác, nhưng không cô nàng mắng mỏ anh là đồ hentai (biến thái) rồi cục cằn trên suốt đường về. Sau ngày hôm đó, bà của Josee ngỏ lời muốn Tsuneo thành người trông coi và hỗ trợ cho cháu gái mình. Liệu rằng công việc làm thêm mới này có dễ dàng với cậu sinh viên?",
+      "time": "12/2/2242",
+      "tinhtrang": "Đang Công chiếu",
+      "xuatchieu": "12h,12h30,1h",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "theloai": "tình cảm, lãng mạng",
+      "trailer": "https://www.youtube.com/embed/d8YSLthFpTM"
+    },
+    {
+      "name": "Kyoukai no Kanata",
+      "bg": "https://c4.wallpaperflare.com/wallpaper/49/1014/565/anime-beyond-the-boundary-mirai-kuriyama-wallpaper-preview.jpg",
+      "img": "https://i.pinimg.com/564x/3e/d8/20/3ed8207350bc3839364284ffb862cd92.jpg",
+      "detail": "Kanbara Akihito, một học sinh trung học năm hai, vào chiều một ngày bắt gặp một học sinh cùng trường, Kuriyama Mirai, đang có ý muốn tự tử. Dù đã ngăn can nhưng không thể phản ứng kịp nhát kiếm bằng máu mà Mirai đã đâm vào cậu, Mirai đã sốc khi biết được Akihito là một Bán Yêu Mộng bất tử – đứa con lai của một Yêu Mộng và một con người. Sau khi Akihito biết cô là một Dị Giới Sĩ (異界士 Ikaishi?) – những thợ săn bảo vệ con người khỏi sự ảnh hưởng của Yêu Mộng, cậu cũng chú ý rằng Mirai là người cuối cùng còn sống trong gia tộc thợ săn của mình. Cuộc sống của cả hai đan xen vào nhau khi Akihito giúp Mirai lấy được sự tự tin để giết Yêu Mộng, mà không phải lấy thân thể cậu ra làm thứ để tập luyện.",
+      "tacgia": "Torii Nagomu",
+      "time": "12/4/2242",
+      "tinhtrang": "Chưa chiếu",
+      "xuatchieu": "12h,12h30,1h",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "theloai": "tình cảm, lãng mạng",
+      "trailer": "https://www.youtube.com/embed/CLwM2_EqODE"
+    },
+    {
+      "name": "Wonder Egg Priority",
+      "tacgia": "Shinji Nojima, đạo diễn Shin Wakabayashi, và thiết kế nhân vật của Saki Takahashi",
+      "bg": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/632b1708-d7d7-4f38-bb99-85bc9dd238e7/degodex-62f84217-768b-456f-8961-ea3690278ca7.png/v1/fill/w_1280,h_725,q_80,strp/wonder_egg_priority_wallpaper_by_altria1513_degodex-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzI1IiwicGF0aCI6IlwvZlwvNjMyYjE3MDgtZDdkNy00ZjM4LWJiOTktODViYzlkZDIzOGU3XC9kZWdvZGV4LTYyZjg0MjE3LTc2OGItNDU2Zi04OTYxLWVhMzY5MDI3OGNhNy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2mHIBESjrwpVvFuMaaAJx-lUcBIBskVlZSIoLQuDMYU",
+      "img": "https://i.pinimg.com/564x/a6/46/16/a64616b6239c9b31a1ae170dec6b2541.jpg",
+      "detail": "Wonder Egg Priority là câu chuyện kể về Ai, một cô gái sống nội tâm có số phận bị thay đổi vĩnh viễn khi cô ấy mua được một “Wonder Egg” bí ẩn từ một trò chơi điện tử hoang vắng.",
+      "time": "12/2/2242",
+      "tinhtrang": "Chưa chiếu",
+      "xuatchieu": "12h,12h30,1h",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "theloai": "Kinh dị",
+      "trailer": "https://www.youtube.com/embed/SnusgwFlai0"
+    },
+    {
+      "name": "Tsukigakirei",
+      "bg": "https://thechuunicorner.files.wordpress.com/2017/12/q9v1waw.png",
+      "tacgia": "Loundraw",
+      "img": "https://i.pinimg.com/564x/96/c5/2b/96c52b0e66eb7235fd3e863fd4a983e1.jpg",
+      "detail": "Câu chuyện xoay quanh cậu học sinh Kotarou Azumi và cô bé Akane Mizuno cùng lớp, cùng với đó là gia đình, bạn bè và hàng xóm xung quanh họ. Bắt đầu từ những phút giây vô tình chạm mặt, rồi để ý đến nhau, rồi thổ lộ và hẹn hò cùng nhau, trao nhau nụ hôn đầu đời...",
+      "time": "12/2/2242",
+      "tinhtrang": "đang chiếu",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "xuatchieu": "12h,12h30,1h",
+      "theloai": "Tình cảm",
+      "trailer": "https://www.youtube.com/embed/-3_hwxNg4b8"
+    },
+    {
+      "name": "Kakushigoto",
+      "bg": "https://animecorner.me/wp-content/uploads/2020/06/Kakushigoto.jpg",
+      "img": "https://i.pinimg.com/564x/85/64/c6/8564c67c79f06cb874bd321a01c217a1.jpg",
+      "detail": "Nhân vật chính của chúng ta tên là Kakushi Goto (chơi chữ), làm nghề họa sĩ truyện tranh. Anh có một cô con gái tên Hime Goto, 2 cha con vô cùng thương yêu nhau. Chuyện sẽ không có gì đáng nói nếu như anh chẳng phải bằng mọi cách, cố gắng giấu đi một bí mật với con gái mình",
+      "time": "12/2/2242",
+      "tacgia": "Kumeta Kouji",
+      "tinhtrang": "đang chiếu",
+      "xuatchieu": "12h,12h30,1h",
+      "soghe": "1,2,3,4,5,6,7,8,9,9a,9b,9c",
+      "theloai": "Tình cảm"
+    }
+  ]
+}
