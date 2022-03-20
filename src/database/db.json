@@ -1,19 +1,8 @@
 {
   "user": [
+ 
     {
-      "cart": [
-        {
-          "time": "12h",
-          "ghe": "8,9a",
-          "combo": "",
-          "total": 90,
-          "data": ""
-        }
-      ],
-      "id": "1"
-    },
-    {
-      "id": "2",
+      "id": "1",
       "name": "admin",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSz8wBuJJTefVDZLyw0jNEXrEFRhHRFqnRixNzycZNDXimZyzTdrRzU9F49J8X61-yg5k&usqp=CAU",
       "cart": 2

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 class nav extends React.Component{
     state={
         user:[],
-        log:false
+        log:true
     }
     componentDidMount(){
       // eslint-disable-next-line no-lone-blocks
@@ -45,7 +45,7 @@ WibuCinema
 
     <ul>{
         this.state.log==true?<><li>
-                            <div class="avatar"><img src={this.state.user.avatar} /></div></li><li>{this.state.user.name}</li><li class="cart">Giỏ hang<div>{this.state.user.id}</div></li></>
+                            <div class="avatar"><img src={this.state.user.avatar} /></div></li><li>{this.state.user.name}</li><li class="cart">Giỏ hàng<div>{this.state.user.id}</div></li></>
 :<><li><Link to="/log">Đăng Nhập</Link></li><li><Link to="/log">Đăng Ký</Link></li></>
     }
 

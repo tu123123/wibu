@@ -5,6 +5,7 @@
 	word-wrap: break-word;
 	text-decoration: none;
 	user-select: none;
+	scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
 	display: none;

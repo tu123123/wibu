@@ -18,13 +18,17 @@
     height: 90px;
     width: 90px;
     bottom: 10px;
+
     right: 10px;
     border:2px solid blueviolet;
    text-align: center;
     font-size: 55px;
     background-color: rgb(112, 111, 111);
     border-radius: 90%;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
 }
 .create textarea{
     width:90%;
@@ -45,15 +49,26 @@
     border: 2px solid lightcyan;
 }
 .create-container{
+    margin: auto;
     height: 200px;
-    width: 400px;
+   display: none;
+    width: 300px;
     bottom: 10px;
+    overflow: hidden;
     right: 10px;
-
+    position: relative;
+    border: 2px dotted lightcoral;
+    
 }
 .thongbao-i{
 display: flex;
 gap:20px;
+}
+.thongbao-i-i{
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
 }
 .thongbao-dt{
     height: 50px;
@@ -80,6 +95,12 @@ gap:20px;
     height: 300px;
     background-color: rgb(94, 94, 94);
     border-radius: 15px;
+    overflow: auto;
+    position: relative;
+    white-space: nowrap;
+}
+.s-thongbao:hover .scrollTrend {
+    opacity:1;
 }
 img{
     height: 100%;
@@ -88,6 +109,7 @@ img{
 }
 .input textarea{
     width:600px;
+    min-height: 60px;
     border-radius: 15px 0px 0px 15px;
     padding: 10px;
     color: black;
@@ -98,7 +120,7 @@ img{
 }
 
 .input button{
-    height: 69px;
+    height: 80px;
     width: 100px;
    
     border-radius: 0px 15px 15px 0px;
@@ -112,11 +134,26 @@ img{
     display: flex;
 }
 .comment-i{
+    line-height: 30px;
     font-size: 20px;
-    width: 50%;
-    height: 20px;
+    width:80%;
+    word-break: break-all;
+    white-space:pre-wrap;
+
+}
+.input-img{
+    cursor: pointer;
+    opacity: 0;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 231, 231);
+    position: absolute;
 }
 .c-i{
+    margin-top: 5px;
     display: flex;
     gap:20px;
     background-color: rgb(0, 0, 0,0.2);
@@ -125,8 +162,10 @@ img{
 }
 .s-thongbao{
     width: 66%;
-    
+    position: relative;
     background-color: rgb(0, 0, 0);
+    overflow:hidden;
+	scroll-behavior: smooth;
 }
 .s-user{
     display: flex;
@@ -141,6 +180,9 @@ img{
 .s-user .name {
     font-size: 20px;
     height: 70px;
+}
+.name-click{
+    cursor: pointer;
 }
 p{
    font-size: 20px;
