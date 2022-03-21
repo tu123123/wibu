@@ -12,7 +12,8 @@ export default class social extends React.Component{
                 document.querySelector(a).style.padding="10px";
                 this.setState({
                    newContent:{ content:document.querySelector(a).value,
-                    id:`t${this.state.Content.length+1}`}
+                    id:`t${this.state.Content.length+1}`,
+                   img:this.state.newContent.img}
                 }) 
         }
     open=()=>{
@@ -44,7 +45,7 @@ export default class social extends React.Component{
   ],
         file:{
             file:null,
-            src:"https://gamek.mediacdn.vn/133514250583805952/2022/3/8/photo-1-16467169858531969228475.jpg"
+            src:""
         },
         newContent:{
             img:"",
@@ -101,6 +102,7 @@ export default class social extends React.Component{
         this.setState({
             newContent:{img:"",
             content:"",
+            img:"",
             id:""}
         })
         document.querySelector(`.text2`).value="";
@@ -122,18 +124,28 @@ export default class social extends React.Component{
         scroll2.scrollLeft=x-b.scrollWidth-50;
         
     }
-    onfileUpdate=()=>{
-        let img=document.querySelector('.input-img');
-        console.log(img.file[0]);
-        this.setState({
-            file:{
-                src:""
+    onfileUpdate=(e)=>{
+        let img=e.target.files[0];
+        let reader = new FileReader();
+        reader.onload=()=>{
+            if(reader.readyState===2){
+                this.setState({
+                    file:{
+                       src:reader.result
+                    },
+                    newContent:{
+                        content:this.state.newContent.content,
+                         id:`t${this.state.Content.length+1}`,
+                        img:reader.result
+                    }
             }
-            
-        })
-       
-      
+                )
+        }
+           
+        
     }
+    reader.readAsDataURL(img)
+}
     
     render(){
         return(<div className="social">
@@ -141,8 +153,8 @@ export default class social extends React.Component{
             <div className="create">
                <h4 className="name-click" onClick={()=>this.open()}>+</h4> 
                 <div className="create-container">
-                <img multiple src={this.state.file.src}/>
-                <input onChange={()=>this.onfileUpdate()} type='file' className="input-img"/>
+                <img src={this.state.file.src}/>
+                <input multiple  onChange={(e)=>this.onfileUpdate(e)} type='file' className="input-img" accept="image/*"/>
                 <h4>HÌNH ẢNH</h4>
                 </div>
                 <textarea className="text2" onChange={()=>this.onheight(".text2")}></textarea>
@@ -151,7 +163,7 @@ export default class social extends React.Component{
         
             <div className="s-background">
 
-            <img src="https://i.pinimg.com/originals/2a/5e/11/2a5e11514f1ce16fff1c2a5e93a79f5b.jpg"/></div>
+            <img src={this.state.newContent.img}/></div>
             <div className="s-thongbao">
             <div onClick={()=>this.scrollTrend('.s-thongbao-c')} className="scrollTrend">
             {">"}
