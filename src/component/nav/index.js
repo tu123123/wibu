@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 class nav extends React.Component{
     state={
         user:[],
-        log:true
+        log:false
     }
     componentDidMount(){
       // eslint-disable-next-line no-lone-blocks
@@ -16,6 +16,11 @@ class nav extends React.Component{
                 })
             })
         
+    }
+    if(this.state.user.id){
+        this.setState({
+            log:true
+        })
     }
 }
     

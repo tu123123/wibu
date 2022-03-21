@@ -1,7 +1,9 @@
 import React from "react";
 import '../social/social.css';
 import Thongbao from '../social/thongbao';
+import '../../loading/loading.css'
 import Content from '../social/content';
+import Load from "../../loading/loadItem";
 export default class social extends React.Component{
     onheight=(a)=>{
         document.querySelector(a).style.height="0px";
@@ -34,7 +36,16 @@ export default class social extends React.Component{
         }
 }
     state={
-        file:null,
+        a:[{
+            id:``,
+            img:"",
+            trangthai:""
+        }
+  ],
+        file:{
+            file:null,
+            src:"https://gamek.mediacdn.vn/133514250583805952/2022/3/8/photo-1-16467169858531969228475.jpg"
+        },
         newContent:{
             img:"",
             content:"",
@@ -69,16 +80,28 @@ export default class social extends React.Component{
             }
         ]
     }
-
+    addLoad=()=>{
+            this.setState({
+                a:[...this.state.a,{
+                    id:`a${this.state.a.length+1}`,
+                    trangthai:"THÀNH CÔNG",
+                    img:`b${this.state.a.length+1}`,
+                }]
+            })
+    }
     newContent=()=>{
-        if(this.state.content!=""){
+       
+        if(this.state.newContent.content!=""){
+            this.addLoad();
             this.setState({
             
                 Content:[...this.state.Content,this.state.newContent]
             })
         }
         this.setState({
-            newContent:[]
+            newContent:{img:"",
+            content:"",
+            id:""}
         })
         document.querySelector(`.text2`).value="";
        
@@ -100,14 +123,26 @@ export default class social extends React.Component{
         
     }
     onfileUpdate=()=>{
-        const data= new FormData();
+        let img=document.querySelector('.input-img');
+        console.log(img.file[0]);
+        this.setState({
+            file:{
+                src:""
+            }
+            
+        })
+       
+      
     }
+    
     render(){
         return(<div className="social">
+
             <div className="create">
                <h4 className="name-click" onClick={()=>this.open()}>+</h4> 
                 <div className="create-container">
-                <input type='file' className="input-img"/>
+                <img multiple src={this.state.file.src}/>
+                <input onChange={()=>this.onfileUpdate()} type='file' className="input-img"/>
                 <h4>HÌNH ẢNH</h4>
                 </div>
                 <textarea className="text2" onChange={()=>this.onheight(".text2")}></textarea>
@@ -138,7 +173,12 @@ export default class social extends React.Component{
             )}
            
             
-            
+            <div className="loading">
+           {this.state.a.map(i => i.id!=""?
+            <Load class={i.id} trangthai={i.trangthai}/>:""
+           )}
+          
+            </div>
             </div>
           
         )

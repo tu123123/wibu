@@ -8,6 +8,8 @@
     background-color: black;
     gap:10px;
     position: relative;
+   
+    overflow: hidden;
 }
 .create{
     transition: 0.5s;

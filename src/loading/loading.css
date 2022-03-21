@@ -1,0 +1,53 @@
+.loading{
+   transition: 0.5s;
+    width:300px;
+    
+    position: fixed;
+    z-index: 99;
+    top: 100px;
+    right: 0;
+}
+.loading .load-active{
+    transition: 0.5s;
+    position: relative;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: gold;
+    
+}
+.loading .load-active .load{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width: 0px;
+    height: 15px;
+    transition: 0.5s;
+    background-color: aquamarine;
+    animation: load 3s;
+}
+.load-img{
+    display: none;
+}
+@keyframes load {
+    0%{
+        width: 0px;
+    }
+    50%{
+        width: 300px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+@keyframes remove{
+    0%{
+       transform: translateX(0px);
+    }
+    50%{
+      
+        transform: translateX(-20px);
+    }
+    100%{
+        transform: translateX(1000px);
+    }
+}
