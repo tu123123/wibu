@@ -3,77 +3,105 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/src/log.jpg');
+    background-image:linear-gradient(to right,rgb(122, 87, 87),rgb(221, 164, 164));
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.lo-f{
-   display: flex;
-    line-height: 100px;
-    height: 0px;
-    width: 40%;
-   border-radius: 15px;
-  background-color: rgb(0,0,0,0.4);
-  transition: 0.5s;
-  justify-content: center;
-  align-items: center;
-}
-.lo-f div{
-    line-height: 100px;
-    height: 300px;
-    width: 500px;
-   border-radius: 15px;
-  background-color: rgb(0,0,0,0.4);
-  transition: 0.5s;
   
-}
-.lo-f fieldset{
-    border: 2px solid white;
-    border-radius: 20px;
-    margin-left: 20px;
-    width: 90%;
-   font-size: 30px;
-   height: 200px;
-}
-.lo-f input{
-    font-size: 30px;
-    height: 100px;
-    width: 80%;
-    padding: 5%;
-    margin: auto;
-    background-color: transparent;
-    border:none;
-    outline: none;
-}
-@keyframes anw{
+}   
+@keyframes login{
     0%{
-        transform: translate(200px,100px);
-        transform: scale(0);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+    }
+    50%{
+        transform: scale(3);
+       
     }
     100%{
-        transform: translate(0,0);
-        transform: scale(1);
+        height: 600px;
+        width: 1000px;
     }
 }
-.lo-d button{
-    margin-left: 20px;
-    border-radius: 50%;
-    height: 200px;
-    background-color: transparent;
-    font-size: 25px;
-    border: 3px solid white;
-    width: 200px;
+.form{
+    display: flex;
+    height: 600px;
+    width: 1000px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 5px 1px 15px 10px;
+    animation: login 2s;
+    background-color: rgb(255, 255, 255);
 }
-.lo-d{
-   transition: 0.5s;
-    height: 200px;
-    width: 20%;
-    border-radius: 50%;
+.img-form{
+    height: 600px;
+    width: 500px;
+    overflow: hidden;
+    animation: login-img 2s;
+    
+}
+.login-form{
+    background-color: rgb(206, 157, 165);
+    height: 600px;
+    width: 500px;
+    overflow: hidden;
+    animation: login-img3 2s;
+}
+@keyframes login-img3 {
+    0%{
+        background-color: rgb(255, 255, 255);
+    }
+    100%{
+        background-color: rgb(206, 157, 165);
+    }
+}
+@keyframes login-img {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;}
+}
+@keyframes login-img2 {
+    0%{
+       
+        transform: translate(2000px,2000px);
+    }
+    100%{
+        transform: translate(0px,0px);
+    }
+}
+.login-form p,input{
+    margin-left:30px;
    
-
+    font-size: 22px;
+    animation: login-img2 2s;
 }
-
-.l-f div{
-    animation:anw 2s;
+.login-form p{
+    text-shadow: 10px 5px 15px rgb(245, 67, 67);
+}
+.login-form input{
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border:none;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px dotted white;
+}
+.login-form button{
+    margin-left: 20px;
+    font-size: 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 12px 1px;
+    transition: 0.5s;
+}
+.login-form button:hover{
+    box-shadow: 1px 1px 50px 1px;
+    background-color: rgb(255, 219, 219);
 }

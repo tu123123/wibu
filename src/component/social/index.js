@@ -3,6 +3,7 @@ import '../social/social.css';
 import Thongbao from '../social/thongbao';
 import '../../loading/loading.css'
 import Content from '../social/content';
+
 import Load from "../../loading/loadItem";
 export default class social extends React.Component{
     onheight=(a)=>{
@@ -84,6 +85,7 @@ export default class social extends React.Component{
     addLoad=()=>{
             this.setState({
                 a:[...this.state.a,{
+                    
                     id:`a${this.state.a.length+1}`,
                     trangthai:"THÀNH CÔNG",
                     img:`b${this.state.a.length+1}`,
@@ -100,11 +102,16 @@ export default class social extends React.Component{
             })
         }
         this.setState({
-            newContent:{img:"",
+            file:{
+                file:null,
+                src:""
+            },
+            newContent:{
             content:"",
             img:"",
             id:""}
         })
+        this.open();
         document.querySelector(`.text2`).value="";
        
     }
@@ -153,7 +160,10 @@ export default class social extends React.Component{
             <div className="create">
                <h4 className="name-click" onClick={()=>this.open()}>+</h4> 
                 <div className="create-container">
-                <img src={this.state.file.src}/>
+                {
+                    this.state.file.src!=""?  <img src={this.state.file.src}/>:""
+                }
+              
                 <input multiple  onChange={(e)=>this.onfileUpdate(e)} type='file' className="input-img" accept="image/*"/>
                 <h4>HÌNH ẢNH</h4>
                 </div>
@@ -162,8 +172,8 @@ export default class social extends React.Component{
             </div>
         
             <div className="s-background">
-
-            <img src={this.state.newContent.img}/></div>
+            <div className="title-s">KIOKU</div>
+            <img src="https://c.wallhere.com/photos/73/9b/city_The_Garden_of_Words_Makoto_Shinkai-90504.jpg!d"/></div>
             <div className="s-thongbao">
             <div onClick={()=>this.scrollTrend('.s-thongbao-c')} className="scrollTrend">
             {">"}
@@ -181,13 +191,13 @@ export default class social extends React.Component{
             </div>
             </div>
             {this.state.Content.map(i=>
-                <Content content={i.content} img={i.img} text={i.id}/>
+                <Content content={i.content} img={i.img} text={i.id} link={i.id}/>
             )}
            
             
             <div className="loading">
            {this.state.a.map(i => i.id!=""?
-            <Load class={i.id} trangthai={i.trangthai}/>:""
+            <Load class={i.id} trangthai={i.trangthai} link={`t${this.state.Content.length}`}/>:""
            )}
           
             </div>

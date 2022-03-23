@@ -60,7 +60,7 @@ export default class social extends React.Component{
     }
     render(){
         return(
-            <div className="s-content">
+            <div className="s-content" id={this.props.link}>
             <div className="s-user">
                 <div className="s-av"><img src="https://i.pinimg.com/originals/83/01/1c/83011ceb5ba721bc7e251a763181783e.jpg"/></div>
                 <div className="name"><div>Admin</div>

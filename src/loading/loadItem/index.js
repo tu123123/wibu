@@ -14,7 +14,8 @@ class Load extends React.Component{
          document.querySelector(`.${this.props.img}`).style.display="block";
          document.querySelector(`.${this.props.class}`).style.backgroundColor="lightgreen";
          document.querySelector(`.${this.props.class} h3`).innerHTML=this.props.trangthai;
-     
+            // eslint-disable-next-line no-restricted-globals
+            location.href=`#${this.props.link}`;
         }, 1500);
         setTimeout(() => {
         
