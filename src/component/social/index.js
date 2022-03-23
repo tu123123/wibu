@@ -3,9 +3,9 @@ import '../social/social.css';
 import Thongbao from '../social/thongbao';
 import '../../loading/loading.css'
 import Content from '../social/content';
-
-import Load from "../../loading/loadItem";
-export default class social extends React.Component{
+import { connect } from "react-redux";
+import Load from "../../loading/index";
+class social extends React.Component{
     onheight=(a)=>{
         document.querySelector(a).style.height="0px";
         document.querySelector(a).style.padding="0px";
@@ -13,8 +13,8 @@ export default class social extends React.Component{
                 document.querySelector(a).style.padding="10px";
                 this.setState({
                    newContent:{ content:document.querySelector(a).value,
-                    id:`t${this.state.Content.length+1}`,
-                   img:this.state.newContent.img}
+                   img:this.state.newContent.img,
+                   id:`t${this.props.dataRedux.Content.length+1}`}
                 }) 
         }
     open=()=>{
@@ -38,12 +38,7 @@ export default class social extends React.Component{
         }
 }
     state={
-        a:[{
-            id:``,
-            img:"",
-            trangthai:""
-        }
-  ],
+
         file:{
             file:null,
             src:""
@@ -51,55 +46,18 @@ export default class social extends React.Component{
         newContent:{
             img:"",
             content:"",
-            id:""
+            id:`t${this.props.dataRedux.Content.length+1}`
         },
-        user:{
-            id:1,
-            name:"admin",
-            avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSz8wBuJJTefVDZLyw0jNEXrEFRhHRFqnRixNzycZNDXimZyzTdrRzU9F49J8X61-yg5k&usqp=CAU",
-        },
-       Thongbao:[
-            {   
-                title:"ANOTHERWORD",
-                content:"On the surface, high school students Naomi Katagaki and Ruri Ichigyou seem to be polar opposites. In contrast to Naomi's shy and timid personality, Ruri strikes fear in her classmates due to being rather cold and outspoken. Nevertheless, both Naomi and Ruri nourish a strong passion for reading, which gradually draws the two closer",
-                img:"https://i.pinimg.com/originals/2a/5e/11/2a5e11514f1ce16fff1c2a5e93a79f5b.jpg"
-            },
-            {   
-                title:"Doraemon: Nobita no Little Star Wars 2021",
-                content:"Doraemon: Nobita no Little Wars 2021 là bộ phim điện ảnh Nhật Bản thứ 41 trong loạt phim điện ảnh Doraemon do Yamaguchi Susumu đạo diễn và Satō Dai viết kịch bản. Phim dự kiến khởi chiếu tại Nhật Bản vào ngày 4 tháng 3 năm 2022",
-                img:"https://upload.wikimedia.org/wikipedia/vi/0/0e/Little_Star_Wars_2021.jpg"
-            }
-       ],
-        Content:[
-            {
-                id:"t1",
-                content:"HATSUNE MIKU Digital Stars 2022 💚  ➡️ https://otakumode.com/fb/hgM    Only available outside Japan at the TOM Shop - plus, you'll also score a coaster as a special bonus! ✨",
-                img:"https://scontent.fsgn13-2.fna.fbcdn.net/v/t39.30808-6/275853909_5583117571715752_5947335728538211080_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_ohc=yvY2ZNnQimMAX99_Lwg&_nc_oc=AQlTrcCfDeHAI_f-zDHAxhHdRRMVuM6oWSS8rID47LinEGEJwQWEiibPXfUIx6u1EOUIh_vfosnNYSB5yXY88Wp4&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT8dfSZcBgghCQRgunKdgWOEqh9NXngznqC3qUAZ65mNYQ&oe=623754BA"
-            },
-            { id:"t2",
-                content:"ăn cơm không biết ngày mai ra sao",
-                img:"https://scontent.fsgn13-2.fna.fbcdn.net/v/t39.30808-6/275853909_5583117571715752_5947335728538211080_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_ohc=yvY2ZNnQimMAX99_Lwg&_nc_oc=AQlTrcCfDeHAI_f-zDHAxhHdRRMVuM6oWSS8rID47LinEGEJwQWEiibPXfUIx6u1EOUIh_vfosnNYSB5yXY88Wp4&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT8dfSZcBgghCQRgunKdgWOEqh9NXngznqC3qUAZ65mNYQ&oe=623754BA"
-            }
-        ]
+
+       
+      
     }
-    addLoad=()=>{
-            this.setState({
-                a:[...this.state.a,{
-                    
-                    id:`a${this.state.a.length+1}`,
-                    trangthai:"THÀNH CÔNG",
-                    img:`b${this.state.a.length+1}`,
-                }]
-            })
-    }
+
     newContent=()=>{
        
         if(this.state.newContent.content!=""){
-            this.addLoad();
-            this.setState({
-            
-                Content:[...this.state.Content,this.state.newContent]
-            })
+            this.props.addContent(this.state.newContent);
+            this.props.addLoading("Thành Công!")
         }
         this.setState({
             file:{
@@ -141,8 +99,7 @@ export default class social extends React.Component{
                        src:reader.result
                     },
                     newContent:{
-                        content:this.state.newContent.content,
-                         id:`t${this.state.Content.length+1}`,
+                        content:this.state.newContent.content,                       
                         img:reader.result
                     }
             }
@@ -155,6 +112,7 @@ export default class social extends React.Component{
 }
     
     render(){
+        console.log(this.props.dataRedux.Loading)
         return(<div className="social">
 
             <div className="create">
@@ -184,25 +142,33 @@ export default class social extends React.Component{
             <h2> Thông báo</h2>
             <div className="s-thongbao-c">
            
-            {this.state.Thongbao.map(i=>
+            {this.props.dataRedux.Thongbao.map(i=>
                 <Thongbao content={i.content} img={i.img} title={i.title}/>
             )}
                 
             </div>
             </div>
-            {this.state.Content.map(i=>
+            {this.props.dataRedux.Content.map(i=>
                 <Content content={i.content} img={i.img} text={i.id} link={i.id}/>
             )}
            
             
-            <div className="loading">
-           {this.state.a.map(i => i.id!=""?
-            <Load class={i.id} trangthai={i.trangthai} link={`t${this.state.Content.length}`}/>:""
-           )}
-          
-            </div>
+            <Load/>
             </div>
           
         )
     }
 }
+const getData=(state)=>{
+    return{ 
+        dataRedux:state
+    }
+}
+const actionRedux=(dispatch)=>{
+    return{
+        addContent:(a)=>dispatch({type:"ADD-Content",payload:a}),
+        addLoading:(a)=>dispatch({type:"ADD-Loading",payload:a})
+    }
+
+}
+export default connect(getData,actionRedux)(social)

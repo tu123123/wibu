@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from "react-redux";
 
 class Load extends React.Component{
     autoScroll=()=>{
@@ -25,7 +25,10 @@ class Load extends React.Component{
         
            setTimeout(() => {
            
-            document.querySelector(`.${this.props.class}`).remove();
+         
+         
+                this.props.removeLoad(this.props.class);
+           
            
            }, 5000);
        
@@ -36,8 +39,9 @@ class Load extends React.Component{
         
     }
     render(){
+        console.log(this.props.trangthai)
         return(
-  
+            
             <div onClick={()=>this.remove()} className={`load-active ${this.props.class}`}>
             <div className={`load-img ${this.props.img}`}><img src="http://images5.fanpop.com/image/answers/2609000/2609354_1334476643699.22res_400_300.jpg"/></div>
               <h3>LOADDING</h3>
@@ -47,4 +51,14 @@ class Load extends React.Component{
         )
     }
 }
-export default Load
+const getData=(state)=>{
+    return{ 
+        dataRedux:state
+    }
+}
+const actionRedux=(dispatch)=>{
+    return{
+        removeLoad:(a)=>dispatch({type:"RemoveLoad",payload:a})
+    }
+}
+export default connect(getData,actionRedux)(Load)

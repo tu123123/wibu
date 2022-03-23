@@ -2,20 +2,56 @@
 /* eslint-disable no-labels */
 import React from "react";
 import '../logn.css';
+import Loading from '../../../loading';
 import {connect} from 'react-redux';
 class login extends React.Component{
+    checkPass=(e)=>{
+       let a= document.querySelector('.check');
+       a.style.display="block";
+        if(e.target.value==document.querySelector('.user-pass').value&&document.querySelector('.user-pass').value!=""){
+                    a.innerHTML="OK"
+                    a.style.backgroundColor="lightgreen";
+        }
+        else{
+            a.style.display="block";
+            a.innerHTML="X"
+            a.style.backgroundColor="red";
+        }
+    }
     handleClickAdd=()=>{
+        let checked=true;
         let user={
             name:document.querySelector('.user-name').value,
             mail:document.querySelector('.user-mail').value,
             pass:document.querySelector('.user-pass').value,
-            taikhoan:document.querySelector('.user-taikhoan').value,
-            id:`${document.querySelector('.user-name').value}-${Math.round(Math.random(1,9000))}`
+            id:document.querySelector('.user-taikhoan').value,
+          
         }
-        this.props.addUser(user)
+        let check=document.querySelectorAll(".l-f input");
+        for(var i=0;i<check.length;i++){
+            if(check[i].value==""){
+                check[i].style.borderBottom="2px dotted red";
+                checked=false;
+            }
+        }
+       document.querySelector('.check').innerHTML=="OK"?
+            checked=true:checked=false;
+      
+        setTimeout(() => {
+            for(let i=0;i<check.length;i++){
+            
+                    check[i].style.borderBottom="2px dotted white";
+                   
+                }
+            
+        },1000);
+        if(checked==true&&this.props.dataRedux.user.filter(i=>i.id==user.id).length<1){
+            this.props.addLoading("Thành Công!");
+            this.props.addUser(user)}
+        
     }
     render(){
-        console.log(this.props.dataRedux)
+        console.log(this.props.dataRedux.Loading)
         return(
             <div className="l-f">
            
@@ -35,13 +71,13 @@ class login extends React.Component{
                     <input className="user-pass" type="password"></input>
                     <br/> <br/>
                     <p>Nhập lại mật khẩu:</p>
-                    <input type="password"></input>
+                   <div className="check-input"><input onChange={(e)=>this.checkPass(e)} type="password"></input><div className="check"></div></div> 
                     <br/> <br/>
                     <button onClick={()=>this.handleClickAdd()}>Đăng ký</button>
                     </div>
                  
                 </div>
-              
+            <Loading/>
             </div>
           
         )
@@ -49,13 +85,14 @@ class login extends React.Component{
 }
 const stateProps=(state)=>{
     return {
-        dataRedux: state.user
+        dataRedux: state
     }
    
 }
 const actionProps=(dispatch)=>{
     return{
-        addUser:(a)=> dispatch({type:"ADD_USER",payload:a})
+        addUser:(a)=> dispatch({type:"ADD_USER",payload:a}),
+        addLoading:(a)=>dispatch({type:"ADD-Loading",payload:a})
     }
 }
 export default connect(stateProps,actionProps)(login);
