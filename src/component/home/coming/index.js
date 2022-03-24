@@ -22,7 +22,7 @@ class coming extends React.Component{
     }
    componentDidMount(){
      
-        fetch("http://wibu-cinema.herokuapp.com/movie")
+        fetch("http://wibu-cinema.herokuapp.com:8000/movie")
         .then(res=>{
             return res.json()
                })
