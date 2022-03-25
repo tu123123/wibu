@@ -71,6 +71,9 @@ class login extends React.Component{
         if(checked==true&&document.querySelector('.check-taikhoan').innerHTML=="OK"){
             data.collection('user').add(user).then(() =>{
                 this.props.addLoading("Thành Công!");
+                setTimeout(() => {
+                    window.location.href="/dangnhap";
+                }, 1500);
                
         })
             .catch(()=>this.props.addLoading("Thất bại!"))
