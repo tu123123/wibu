@@ -4,6 +4,7 @@ import React from "react";
 import '../logn.css';
 import Loading from '../../../loading';
 import {connect} from 'react-redux';
+import {data} from '../../../database/firebaseData';
 class login extends React.Component{
     checkPass=(e)=>{
        let a= document.querySelector('.check');
@@ -18,6 +19,27 @@ class login extends React.Component{
             a.style.backgroundColor="red";
         }
     }
+    checkTaikhoan=(e)=>{
+        
+        let a= document.querySelector('.check-taikhoan');
+        if(e.target.value==""){
+        a.style.display="none";    
+        }
+        data.collection('user').get().then(i=>{
+            i.forEach(y=>{
+                if(y.data().id!=e.target.value&&e.target.value!=""){
+                    a.style.display="block";
+                    a.innerHTML="OK"
+                    a.style.backgroundColor="lightgreen";
+        }
+        else if(e.target.value!=""){
+            a.style.display="block";
+            a.innerHTML="X"
+            a.style.backgroundColor="red";
+        }
+            })
+        })
+     }
     handleClickAdd=()=>{
         let checked=true;
         let user={
@@ -34,9 +56,10 @@ class login extends React.Component{
                 checked=false;
             }
         }
+     
        document.querySelector('.check').innerHTML=="OK"?
             checked=true:checked=false;
-      
+        
         setTimeout(() => {
             for(let i=0;i<check.length;i++){
             
@@ -45,11 +68,16 @@ class login extends React.Component{
                 }
             
         },1000);
-        if(checked==true&&this.props.dataRedux.user.filter(i=>i.id==user.id).length<1){
-            this.props.addLoading("Thành Công!");
-            this.props.addUser(user)}
+        if(checked==true&&document.querySelector('.check-taikhoan').innerHTML=="OK"){
+            data.collection('user').add(user).then(() =>{
+                this.props.addLoading("Thành Công!");
+               
+        })
+            .catch(()=>this.props.addLoading("Thất bại!"))
+            
+            
         
-    }
+    }}
     render(){
         console.log(this.props.dataRedux.Loading)
         return(
@@ -62,7 +90,10 @@ class login extends React.Component{
                     <input  className="user-name"></input>
                     <br/> <br/>
                     <p>Tên đăng nhập:</p>
-                    <input className="user-taikhoan"></input>
+                    <div className="f-check-taikhoan">
+                    <input onChange={(e)=>this.checkTaikhoan(e)} className="user-taikhoan"></input>
+                    <div className="check-taikhoan"></div>
+                    </div>  
                     <br/> <br/>
                     <p>gmail:</p>
                     <input className="user-mail"></input>

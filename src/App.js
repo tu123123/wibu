@@ -6,6 +6,7 @@ import Detail from './component/Detail/main';
 import Login from './component/login/loginForm';
 import { Switch,Route ,BrowserRouter} from 'react-router-dom';
 import Social from './component/social';
+import Dangnhap from './component/dangnhap';
 function App() {
   
   
@@ -15,10 +16,12 @@ function App() {
     <div className='App' >
       <Nav />
       <Switch>
-        <Route path='/' exact><Main/></Route>
-        <Route path='/log' exact><Login/></Route>
+      <Route path='/' exact><Main/></Route>
+        <Route path='/wibu' exact><Main/></Route>
+        <Route path='/dangky' exact><Login/></Route>
         <Route path='/detail/:id'> <Detail/></Route>
         <Route path='/social'><Social/></Route>
+        <Route path='/dangnhap'><Dangnhap/></Route>
       </Switch>
      
      

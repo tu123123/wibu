@@ -32,8 +32,22 @@ Link{
 	width:100%;
 	background-color:black;
 	align-items:center;
+}.setting ul{
+	
+	width: 100px;
+	background-color: rgb(0,0,0,0.5);
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 0px 0px 22px 22px;
 }
-
+.setting li{
+	font-size:15px;
+}
+.setting{
+	display: none;
+	position: absolute;
+	bottom: -140px;
+}
 .nav{
 	background-image:linear-gradient(to bottom,rgb(0,0,0,0.6),rgb(0,0,0,0.5));
 	width:100%;

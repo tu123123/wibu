@@ -1,19 +1,31 @@
 import React from "react";
+import Sessison from 'react-session-api';
 import { Link } from "react-router-dom";
 import {data} from '../../database/firebaseData';
 class nav extends React.Component{
     state={
-        user:[],
+        user:{},
         log:false
     }
     componentDidMount(){
       // eslint-disable-next-line no-lone-blocks
       {
-            fetch('http://localhost:8000/user/1')
-            .then(res=>res.json())
-            .then(res=>{
-                this.setState({
-                   user:res
+            data.collection('user').get().then(i=>{
+                i.forEach(y=>{
+                    if(y.id==localStorage.getItem('user')){
+                        this.setState({
+                            user:{
+                                id:y.data().id,
+                                name:y.data().name,
+                                avatar:y.data().img,
+                                cart:y.data().cart,
+
+                                
+                            }
+
+                            
+                        })
+                    }
                 })
             })
         
@@ -24,10 +36,19 @@ class nav extends React.Component{
         })
     }
 }
-    
+    openSetting=()=>{
+        document.querySelector('.setting').style.display="block";
+    }
+    closeSetting=()=>{
+        document.querySelector('.setting').style.display="none";
+    }
+    onLogout=()=>{
+        localStorage.removeItem('user');
+        window.location.href='/'
+    }
     render(){
      
-        console.log(this.state.user);
+      
         return(
             <div class="nav">
 <div class="title">
@@ -51,9 +72,21 @@ WibuCinema
 <div>
 
     <ul>{
-        this.state.log==true?<><li>
-                            <div class="avatar"><img src={this.state.user.avatar} /></div></li><li>{this.state.user.name}</li><li class="cart">Giỏ hàng<div>{this.state.user.id}</div></li></>
-:<><li><Link to="/log">Đăng Nhập</Link></li><li><Link to="/log">Đăng Ký</Link></li></>
+       localStorage.getItem('user')?<><li onMouseLeave={()=>this.closeSetting()} onClick={()=>this.openSetting()}>
+                            <div className="avatar"><img src={this.state.user.avatar} /></div>
+                            <div className="setting"><ul>
+                                <li>
+                                    Thông tin cá nhân
+                                </li>
+                                <li>
+                                   Đơn hàng
+                                </li>
+                                <li onClick={()=>this.onLogout()}>
+                                    Đăng xuất
+                                </li>
+                            </ul></div>
+                            </li><li>{this.state.user.name}</li><li class="cart">Giỏ hàng<div>{this.state.user.cart}</div></li></>
+:<><li><Link to="/dangnhap">Đăng Nhập</Link></li><li><Link to="/dangky">Đăng Ký</Link></li></>
     }
 
 </ul>
