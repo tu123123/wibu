@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { data } from "../../../database/firebaseData";
 class newmovie extends React.Component{
     scrollTrend=(a)=>{
         var scroll2=document.querySelector(""+a+"");
@@ -15,24 +16,17 @@ class newmovie extends React.Component{
     }
     state={
         data:[
-            {
-                
-            }
+           
         ]
     }
     componentDidMount(){
-     
-        fetch("http://localhost:8000/movie")
-        .then(res=>{
-            return res.json()
-               })
-        .then(res=>{
-                this.setState({
-                    data:res
-                })
-                
-                   }) 
-    
+     data.collection('movie').get().then((i)=>{
+         i.forEach(y=>{
+             this.setState({
+                 data:[...this.state.data,y.data()]
+             })
+         })
+     })
     }
     render(){
         return(

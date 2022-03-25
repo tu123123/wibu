@@ -4,24 +4,23 @@ import { withRouter } from "react-router-dom";
 import Content from '../content';
 import BuyTicker from '../buyTicker';
 import Trailer from '../trailer';
+import {data} from '../../../database/firebaseData'
 class main extends React.Component{
     state={
         data:[]
     }
     componentDidMount(){
-     
-        fetch("http://localhost:8000/movie")
-        .then(res=>{
-            return res.json()
-               })
-        .then(res=>{
+        data.collection('movie').get().then((i)=>{
+            i.forEach(y=>{
+                if(y.data().name==this.props.match.params.id){
+                    this.setState({
+                        data:[...this.state.data,y.data()]
+                    })
+                }
                 
-                this.setState({
-                    data:res.filter(i=>i.name==this.props.match.params.id)
-                })
-                
-                   }) ;
-    
+            })
+        })
+        
     
     }
    

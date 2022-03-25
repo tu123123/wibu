@@ -1,5 +1,6 @@
+import { data } from "../../database/firebaseData";
 
-const data={
+const dataR={
     user:[
         {
             id:0,
@@ -12,12 +13,8 @@ const data={
         
     ],
     Content:[
-        {
-            id:"t1",
-            content:"HATSUNE MIKU Digital Stars 2022 💚  ➡️ https://otakumode.com/fb/hgM    Only available outside Japan at the TOM Shop - plus, you'll also score a coaster as a special bonus! ✨",
-            img:"https://scontent.fsgn13-2.fna.fbcdn.net/v/t39.30808-6/275853909_5583117571715752_5947335728538211080_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_ohc=yvY2ZNnQimMAX99_Lwg&_nc_oc=AQlTrcCfDeHAI_f-zDHAxhHdRRMVuM6oWSS8rID47LinEGEJwQWEiibPXfUIx6u1EOUIh_vfosnNYSB5yXY88Wp4&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT8dfSZcBgghCQRgunKdgWOEqh9NXngznqC3qUAZ65mNYQ&oe=623754BA"
-        },
-        { id:"t2",
+     
+        { id:"t1",
             content:"ăn cơm không biết ngày mai ra sao",
             img:"https://scontent.fsgn13-2.fna.fbcdn.net/v/t39.30808-6/275853909_5583117571715752_5947335728538211080_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_ohc=yvY2ZNnQimMAX99_Lwg&_nc_oc=AQlTrcCfDeHAI_f-zDHAxhHdRRMVuM6oWSS8rID47LinEGEJwQWEiibPXfUIx6u1EOUIh_vfosnNYSB5yXY88Wp4&_nc_ht=scontent.fsgn13-2.fna&oh=00_AT8dfSZcBgghCQRgunKdgWOEqh9NXngznqC3qUAZ65mNYQ&oe=623754BA"
         }
@@ -47,7 +44,23 @@ const data={
     
 
 }
-const rootReducers=(state=data,action)=>{
+
+
+const rootReducers=(state=dataR,action)=>{
+    data.collection('content').get().then((i)=>{
+
+        i.forEach( i=>{
+            console.log(i.data())
+        })
+    }
+
+    )
+    data.collection("chat").add({tenloai:"Tình báo",thutu:5,anhien:true})
+    .then((docRef) => {console.log("Document written:", docRef.id);})
+    .catch((error) => {console.error("Error add doc: ", error);});
+        
+   
+        
     // eslint-disable-next-line default-case
     switch(action.type)
     {

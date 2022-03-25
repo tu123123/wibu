@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {data} from '../../../database/firebaseData'
 class trend extends React.Component{
     scrollTrend=(a)=>{
         var scroll2=document.querySelector(""+a+"");
@@ -15,37 +16,23 @@ class trend extends React.Component{
     }
     state={
         data:[
-            {
-                
-            }
+          
         ]
     }
     componentDidMount(){
-        
-        fetch("http://localhost:8000/movie")
-        .then(res=>{
-            return res.json()
-               })
-        .then(res=>{
+       
+        data.collection('movie').get().then((i)=>{
+            i.forEach(y=>{
                 this.setState({
-                    data:res
+                    data:[...this.state.data,y.data()]
                 })
-                
-                   }) 
+            })
+        })
+       
     
     }
     render(){
-        setInterval(() => {
-            var scroll2=document.querySelector(".list-trend");
-        var x=scroll2.scrollLeft;
-        if( x>scroll2.scrollWidth){
-            scroll2.scrollLeft=0;
-        }
-        else{
-            scroll2.scrollLeft=x+269; 
-        }
        
-        }, 3000);
         return(
             <div  class="trending">
 

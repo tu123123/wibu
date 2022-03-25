@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {data} from '../../database/firebaseData';
 class nav extends React.Component{
     state={
         user:[],
@@ -25,7 +26,8 @@ class nav extends React.Component{
 }
     
     render(){
-        console.log(this.state.user)
+     
+        console.log(this.state.user);
         return(
             <div class="nav">
 <div class="title">

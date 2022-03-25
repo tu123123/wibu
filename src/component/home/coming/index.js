@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {data} from "../../../database/firebaseData";
 class coming extends React.Component{
     scrollTrendbottom=()=>{
         var scroll2=document.querySelector(".list-item");
@@ -15,23 +16,19 @@ class coming extends React.Component{
     }
     state={
         data:[
-            {
-                "sà":"sfaf"
-            }
+            
         ]
     }
    componentDidMount(){
      
-        fetch("http://wibu-cinema.herokuapp.com:8000/movie")
-        .then(res=>{
-            return res.json()
-               })
-        .then(res=>{
-                this.setState({
-                    data:res
-                })
-                
-                   }) 
+    data.collection('movie').get().then((i)=>{
+        i.forEach(y=>{
+            this.setState({
+                data:[...this.state.data,y.data()]
+            })
+        })
+    })
+   
     
     }
     render(){
