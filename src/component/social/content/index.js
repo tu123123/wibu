@@ -72,9 +72,13 @@ export default class social extends React.Component{
             </p>
             <img className="img-c" src={this.props.img} />
             <div className="comment">
+            {localStorage.getItem('user')&&
             <div className="input">
+           
                 <div><textarea onChange={()=>this.onheight(`.${this.props.text}`)} className={this.props.text}></textarea></div>
                 <div><button onClick={()=>this.newCmt()}>Gửi</button></div></div>
+        }
+            
                 {this.state.comment.map(i=>
                 
                 <Comment img={i.user.img} cmt={i.cmt}/>

@@ -114,8 +114,8 @@ class social extends React.Component{
     render(){
         console.log(this.props.dataRedux.Loading)
         return(<div className="social">
-
-            <div className="create">
+    {localStorage.getItem('user')&&
+    <div className="create">
                <h4 className="name-click" onClick={()=>this.open()}>+</h4> 
                 <div className="create-container">
                 {
@@ -128,6 +128,8 @@ class social extends React.Component{
                 <textarea className="text2" onChange={()=>this.onheight(".text2")}></textarea>
                 <button onClick={()=>this.newContent()}>Đăng</button>
             </div>
+    }
+           
         
             <div className="s-background">
             <div className="title-s">KIOKU</div>
