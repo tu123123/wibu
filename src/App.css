@@ -332,6 +332,9 @@ text-align:center;
 .scrollTrend:hover{
 	background-color:lightgreen;
 }
+.nav-menu-2{
+	display: none;
+}
 .scrollLeft{
 	left:0;
 }
