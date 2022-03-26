@@ -241,3 +241,17 @@ p{
    padding: 50px;
     background-color: rgb(119, 119, 119);
 }
+@media screen and (max-width:800px) {
+    .s-thongbao{
+        width: 100%;
+    }
+    .s-thongbao-c{
+        width: 100%;
+    }
+    .s-content{
+        width: 90%;
+    }
+    .title-s{
+       left:30%;
+    }
+}

@@ -18,6 +18,7 @@ button,li{
 	background-color: black;
 	width:100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 }
 Link{
@@ -362,4 +363,84 @@ text-align:center;
 	line-height:50px;
 	width:90%;
 	overflow:auto;
+}
+@media screen and (max-width:800px) 
+{
+	::-webkit-scrollbar {
+		display: block;
+	  }
+	
+	.newMovie{
+		width: 100%;
+		margin-top: 15px;
+		overflow:auto
+		
+	}
+	.container{
+		overflow:auto;
+		display: flex;
+		flex-direction: column;
+	}
+	.comingSoon{
+		scrollbar-width: 20px;
+		width: 100%;
+	}
+	.trending{
+		width: 100%;
+	}
+	li{
+		font-size: 15px;
+		width: 100px;
+		padding: 0px;
+	}
+	.scrollTrend{
+		display: block;
+	}
+	.nav{
+		gap:5%
+	}
+	.nav-menu-1{
+		display: none;
+	}
+	.setting{
+		top:60px;
+		
+	}
+	.setting li{
+	
+	}
+	.nav-menu-2{
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		top:65px;
+		height: 90vh;
+	
+	}
+	.nav-menu-2-1{
+	background-color: black;
+	transition: 0.5s;
+	overflow: hidden;
+		height: 90vh;
+		width: 0px;
+		box-shadow: 10px 10px 30px black;
+	}
+	.nav-menu-2-1 ul{
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		line-height: 30px;
+	}
+	.nav-menu-2-1 li{
+		width: 200px;
+		
+	}
+	.nav-menu-2-2{
+		box-shadow: 10px 10px 30px black;
+		background-color: black;
+		text-align: center;
+			height: 50px;
+			width: 50px;
+			border-radius: 0px 15px 15px 0px;
+		}
 }

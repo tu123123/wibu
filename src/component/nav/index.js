@@ -36,6 +36,16 @@ class nav extends React.Component{
         })
     }
 }
+    openMenu=()=>{
+       document.querySelector('.nav-menu-2-1').style.width=="0px"?
+            document.querySelector('.nav-menu-2-1').style.width="200px":document.querySelector('.nav-menu-2-1').style.width="0px";
+          
+           
+        
+    }
+    closeMenu=()=>{
+        document.querySelector('.nav-menu-2-1').style.width="0px"
+    }
     openSetting=()=>{
         document.querySelector('.setting').style.display="block";
     }
@@ -59,8 +69,23 @@ WibuCinema
 </div></Link>
 
 </div>
-<div>
-<ul>
+<div onMouseLeave={()=>this.closeMenu()} className="nav-menu-2">
+    <div className="nav-menu-2-1">
+    <ul >
+<li><Link className="Link" to="/social">DIỄN ĐÀN</Link></li>
+<li>LỊCH CHIẾU</li>
+<li>PHIM SẮP RA MẮT</li>
+<li>RẠP/GIÁ</li>
+<li>GIỚI THIỆU </li>
+<li>LIÊN HỆ</li>
+</ul>
+    </div>
+    <div onClick={()=>this.openMenu()} className="nav-menu-2-2">
+        <h2>{">"}</h2>
+        </div>
+</div>
+<div className="nav-menu-1">
+<ul >
 <li><Link className="Link" to="/social">DIỄN ĐÀN</Link></li>
 <li>LỊCH CHIẾU</li>
 <li>PHIM SẮP RA MẮT</li>
@@ -76,7 +101,7 @@ WibuCinema
                             <div className="avatar"><img src={this.state.user.avatar} /></div>
                             <div className="setting"><ul>
                                 <li>
-                                    Thông tin cá nhân
+                                    Thông tin
                                 </li>
                                 <li>
                                    Đơn hàng
