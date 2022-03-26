@@ -254,7 +254,15 @@ p{
 scroll-behavior: smooth;
 	 
 }
+.item-trend h2{
+	display:inline-block;
+	white-space: break-spaces;
+}
+.item-trend h2,p{
+	text-align: center;
+}
 .item-trend{
+	
 	display:inline-block;
 	height:360px;
 	width:250px;
