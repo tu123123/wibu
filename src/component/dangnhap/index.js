@@ -17,7 +17,7 @@ import {data} from '../../database/firebaseData';
                 {   localStorage.setItem('user',y.id)
                     a.style.display="block";
                     setTimeout(() => {
-                        window.location.href = "/"
+                        window.location.href = "/wibu"
                     }, 2000);
                 }
                 else{

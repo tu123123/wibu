@@ -95,7 +95,7 @@ ul{
 	}
 li{
 	display:flex;
-	font-size:20px;
+	font-size:120%;
 	list-style:none;
 	align-items:center;
 	justify-content:center;
