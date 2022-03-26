@@ -258,7 +258,7 @@ scroll-behavior: smooth;
 	display:inline-block;
 	white-space: break-spaces;
 }
-.item-trend h2,p{
+.item-movie {
 	text-align: center;
 }
 .item-trend{

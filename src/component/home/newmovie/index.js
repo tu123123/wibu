@@ -42,13 +42,13 @@ class newmovie extends React.Component{
 {this.state.data.map(i=>
 i.tinhtrang!="Chưa chiếu"?
 
-            <div class="item-trend">
+            <div class="item-trend ">
             <img src={i.img}/>
             <div class="detail-trend">
-            <h2>{i.name}</h2>
-            <p><b>Tình trạng:</b> {i.tinhtrang}</p>
+            <h2 className="item-movie">{i.name}</h2>
+            <p className="item-movie"> <b>Tình trạng:</b> {i.tinhtrang}</p>
             
-            <p><b>Thể loại:</b> {i.theloai}</p>
+            <p className="item-movie"><b>Thể loại:</b> {i.theloai}</p>
             <Link to={{pathname:`/detail/${i.name}`}} ><button>MUA VÉ NGAY!</button></Link>
             </div>
             </div>  :""

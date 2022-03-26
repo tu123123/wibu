@@ -46,13 +46,13 @@ class trend extends React.Component{
             <div class="list-trend">
             {this.state.data.map(i=>
                
-            <div class="item-trend">
+            <div class="item-trend x">
             <img src={i.img}/>
             <div class="detail-trend">
-            <h2>{i.name}</h2>
-            <p><b>Tình trạng:</b> {i.tinhtrang}</p>
+            <h2 className="item-movie">{i.name}</h2>
+            <p className="item-movie"><b>Tình trạng:</b> {i.tinhtrang}</p>
             
-            <p><b>Thể loại:</b> {i.theloai}</p>
+            <p className="item-movie"><b>Thể loại:</b> {i.theloai}</p>
             <Link to={{pathname:`/detail/${i.name}`}} ><button>MUA VÉ NGAY!</button> </Link>
             </div>
             </div>
